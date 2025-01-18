@@ -2,10 +2,16 @@ package net.sailware.bclicker
 
 import com.badlogic.gdx.Game
 import com.badlogic.gdx.Screen
+import com.badlogic.gdx.graphics.g2d.BitmapFont
+import net.sailware.bclicker.util.FontUtil
 
 class Main extends Game:
 
+  var font: Option[BitmapFont] = None
+
   override def create(): Unit =
+    FontUtil.init()
+    font = FontUtil.komika
     setScreen(FirstScreen())
 
 class FirstScreen extends Screen:
