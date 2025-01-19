@@ -22,8 +22,8 @@ class Main extends Game:
 
   override def dispose(): Unit =
     super.dispose()
-    if batch.nonEmpty then batch.get.dispose()
-    if font.nonEmpty then font.get.dispose()
+    if batch.isDefined then batch.get.dispose()
+    if font.isDefined then font.get.dispose()
 
 class FirstScreen extends Screen:
 

@@ -23,13 +23,14 @@ public class TeaVMBuilder {
 
         // Register any classes or packages that require reflection here:
         // TeaReflectionSupplier.addReflectionClass("net.sailware.bclicker.reflect");
+        TeaReflectionSupplier.addReflectionClass("scala.runtime.LambdaDeserialize.bootstrap");
 
         TeaVMTool tool = TeaBuilder.config(teaBuildConfiguration);
         tool.setMainClass(TeaVMLauncher.class.getName());
         // For many (or most) applications, using the highest optimization won't add much to build time.
         // If your builds take too long, and runtime performance doesn't matter, you can change FULL to SIMPLE .
         tool.setOptimizationLevel(TeaVMOptimizationLevel.FULL);
-        tool.setObfuscated(true);
+        tool.setObfuscated(false);
         TeaBuilder.build(tool);
     }
 }
